@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etyczne Hakowanie - Max</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            color: #0f0;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #111;
+            color: #0f0;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Spadające cyferki */
+        .matrix {
+            position: absolute;
+            font-family: Arial, sans-serif;
+            color: #0f0;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Etyczne Hakowanie - Max</h1>
+</header>
+
+<nav>
+    <a href="#about">O mnie</a>
+    <a href="#services">Usługi</a>
+    <a href="#contact">Kontakt</a>
+</nav>
+
+<section id="about">
+    <h2>O mnie</h2>
+    <p>Cześć! Jestem Max, pasjonuję się etycznym hakowaniem już od wielu lat. Moją misją jest wykorzystywanie moich umiejętności w celu poprawy bezpieczeństwa w sieci.</p>
+</section>
+
+<section id="services">
+    <h2>Usługi</h2>
+    <p>Oferuję szeroki zakres usług związanych z etycznym hakowaniem, w tym:</p>
+    <ul>
+        <li>Skanowanie pod kątem luk w zabezpieczeniach</li>
+        <li>Testy penetracyjne</li>
+        <li>Szkolenia z zakresu cyberbezpieczeństwa</li>
+        <li>Konsultacje dotyczące bezpieczeństwa</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Kontakt</h2>
+    <p>Skontaktuj się ze mną, aby omówić swoje potrzeby związane z bezpieczeństwem:</p>
+    <p>Email: max@ethicalhacker.com</p>
+    <p>Telefon: +48 123 456 789</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Etyczne Hakowanie - Max. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<!-- Spadające cyferki -->
+<div class="matrix-container"></div>
+<script>
+    // Tworzenie spadających cyferek
+    const matrixContainer = document.querySelector('.matrix-container');
+
+    function createMatrix() {
+        const matrix = document.createElement('div');
+        matrix.className = 'matrix';
+        matrix.textContent = Math.floor(Math.random() * 10); // Losowa cyfra od 0 do 9
+        matrix.style.left = Math.random() * 100 + 'vw'; // Losowa pozycja pozioma
+        matrix.style.animationDuration = Math.random() * 3 + 2 + 's'; // Losowa prędkość spadania
+        matrixContainer.appendChild(matrix);
+
+        setTimeout(() => {
+            matrix.remove(); // Usunięcie cyfry po zakończeniu animacji
+        }, 5000);
+    }
+
+    setInterval(createMatrix, 200); // Tworzenie nowych cyfr co 200ms
+</script>
+
+</body>
+</html>
